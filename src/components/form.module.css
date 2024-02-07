@@ -1,0 +1,98 @@
+.formBlock {
+    background-color: #efefef;
+    width: auto;
+    height: auto;
+    color: rgb(109, 108, 108);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    color: royalblue;
+}
+
+label {
+    display: inline-block;
+    width: 180px;
+    padding: 10px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+select,
+input {
+    padding: 15px;
+    border-radius: 4px;
+    width: 300px;
+    border: none;
+    font-size: 16px;
+    color: grey;
+    font-weight: 600;
+}
+
+.divBlock {
+    height: 83px;
+    display: flex;
+    align-items: center;
+}
+
+textarea {
+    margin: 10px 10px 10px 70px;
+    border-radius: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+.btnBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 40px;
+    height: 50px;
+
+    border-radius: 6px;
+    background-color: royalblue;
+    color: white;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn:hover {
+    background-color: rgb(113, 148, 255);
+    transition: ease-in .2s;
+}
+
+.tabelBlock {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: rgb(102, 102, 102);
+}
+
+table {
+    margin-top: 40px;
+    border: 1px solid royalblue;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid royalblue;
+}
