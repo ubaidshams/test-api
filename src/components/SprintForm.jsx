@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,  } from 'react';
 import styles from './sprint-form.module.css'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { projectLabels, spirntTeams, sprintLabels } from '../constants/ui-constants';
 import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { getProjects } from '../apis/api-services';
+import { useNavigate } from 'react-router-dom';
 
 const SprintForm = () => {
+    let navigate = useNavigate()
     const [project, setProject] = useState("")
     const [sprint, setSprint] = useState("")
     const [sprintTeam, setSprintTeam] = useState("")
@@ -20,21 +19,16 @@ const SprintForm = () => {
     const [endDate, setEndDate] = useState("")
     const [epic, setEpic] = useState("")
     const [tracabilityMatrix, setTracabilityMatrix] = useState("")
-    const [projectData, setProjectData] = useState([])
 
-    const getProjectList = async () => {
-        try {
-            let { data } = await getProjects()
-            console.log("🚀 ~ getProjectList ~ data:", data)
-            setProjectData(data)
-        } catch (error) {
-            console.error(error)
-        }
+    const handleClear = () => {
+        setProject("")
+        setSprint("")
+        setSprintTeam("")
+        setStartDate("")
+        setEndDate("")
+        setEpic("")
+        setTracabilityMatrix("")
     }
-    useEffect(() => {
-        getProjectList()
-    }, [])
-
 
     const handleChange = (e, setFunction) => {
         setFunction(e.target.value);
@@ -101,6 +95,10 @@ const SprintForm = () => {
                     <FormControlLabel onChange={e => handleChange(e, setTracabilityMatrix)} value="Traceability" control={<Radio />} label="Traceability Matrix" />
                 </div>
             </form>
+            <div>
+                <button onClick={handleClear}>Reset</button>
+                <button onClick={() => navigate(`/table-data`)}>Submit</button>
+            </div>
         </div>
     )
 }

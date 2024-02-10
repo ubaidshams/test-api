@@ -1,11 +1,12 @@
 import React from 'react'
-import SprintForm from './components/SprintForm'
+import { BrowserRouter } from 'react-router-dom'
+import CustomRoutes from './routes/CustomRoutes'
 
 const App = () => {
     return (
-        <div>
-            <SprintForm />
-        </div>
+        <BrowserRouter>
+            <CustomRoutes />
+        </BrowserRouter>
     )
 }
 
